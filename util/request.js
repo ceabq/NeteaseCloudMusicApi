@@ -50,7 +50,11 @@ const createRequest = (method, url, data, options) => {
     if (url.includes('music.163.com'))
       headers['Referer'] = 'https://music.163.com'
     if (options.realIP) headers['X-Real-IP'] = options.realIP
+<<<<<<< HEAD
       headers['X-Real-IP'] = '118.88.88.88'
+=======
+       headers['X-Real-IP'] = '211.157.0.28'
+>>>>>>> 0f58f1fdbb0b445fad46870df362091224d5c148
     if (typeof options.cookie === 'object')
       headers['Cookie'] = Object.keys(options.cookie)
         .map(
@@ -142,6 +146,8 @@ const createRequest = (method, url, data, options) => {
           console.error('代理配置无效,不使用代理')
         }
       }
+    } else {
+      settings.proxy = false
     }
     if (options.crypto === 'eapi') {
       settings = {
